@@ -230,7 +230,8 @@ class RealEstateApiController extends Controller
         if($obj = RealEstate::where('id', $id)->first())
         {
             RealEstate::where('id', $id)->delete();
-            $response = APIResponse(true, 200, '', $this->responseTitle.' Deleted Successfully', ['removed_record' => $obj]);
+            $objNew = RealEstate::where('id', $id)->first();
+            $response = APIResponse(true, 200, '', $this->responseTitle.' Deleted Successfully', ['removed_record' => $objNew]);
             return response($response, 200);
         }
         else
