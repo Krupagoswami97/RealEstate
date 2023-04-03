@@ -54,7 +54,7 @@ Run below command for seeding:
 Feature Testing:
 ------
 
-Run below command for seeding:
+Run below command for feature testing:
 
 ```
     php artisan make:test RealEstateTest
