@@ -19,7 +19,7 @@ class RealEstateApiController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+    */
     public function index()
     {
         $obj = RealEstate::select('id','name','real_estate_type','city','country');

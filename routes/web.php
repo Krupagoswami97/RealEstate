@@ -29,7 +29,7 @@ Route::get('/', function(){
 
 Route::prefix('real-estate')->group(function () {
 
-    # Purchase
+    # Real Estate
     Route::get('real/estate', function(){return view('pages.real_estate.index');})->name('real_estate.index');
     Route::get('real/estate/add', function(){ return view('pages.real_estate.create_edit'); })->name('real_estate.create');
     Route::get('real/estate/edit/{id}', function(Request  $request){ $id =  $request->id; return view('pages.real_estate.create_edit',compact('id')); })->name('real_estate.edit');

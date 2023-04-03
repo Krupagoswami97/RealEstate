@@ -148,6 +148,7 @@ $(document).on("click", '.edit', function () {
     window.location.href = new_url;
 });
 
+/* Note : Array empty when delete ajax call completed */
 function RecordArrayEmpty(){
     recordIds = [];
     $('.parentCheckbox').prop("checked", false).change();
@@ -224,6 +225,7 @@ function delete_record(recordIds)
     })
 }
 
+/* Note : Ajax call for Restore Record */
 function restore_record(recordIds)
 {
     var themeClass = "";
@@ -243,7 +245,7 @@ function restore_record(recordIds)
         confirmButtonColor: '#00C851',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, restore it!',
-        confirmButtonClass: 'btn btn-success',
+        confirmButtonClass: 'btn btn-primary',
         customClass: {
             popup: themeClass,
             htmlContainer : themeTextColor,
@@ -291,6 +293,7 @@ function restore_record(recordIds)
     })
 }
 
+/* Note : Ajax call for Recycle Record */
 function recycle_record(recordIds)
 {
     var themeClass = "";
@@ -310,7 +313,7 @@ function recycle_record(recordIds)
         confirmButtonColor: '#00C851',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes',
-        confirmButtonClass: 'btn btn-success',
+        confirmButtonClass: 'btn btn-primary',
         customClass: {
             popup: themeClass,
             htmlContainer : themeTextColor,

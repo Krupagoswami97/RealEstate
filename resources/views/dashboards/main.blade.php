@@ -2,7 +2,7 @@
 @php
     use App\Models\RealEstate;
     $RealEstateCount = RealEstate::withTrashed()->count();
-    // $RealEstateTrashCount = RealEstate::where('deleted_at','!=',"Null")->count();
+    $RealEstateTrashCount = RealEstate::where('deleted_at','!=',NULL)->withTrashed()->count();
 
 @endphp
 
@@ -26,7 +26,7 @@
         z-index: 5;
     }
     .card-body a {
-        color: #625f6e !important;
+        color:rgb(214, 207, 207) !important;
         text-decoration: none;
     }
 
@@ -50,7 +50,26 @@
                             </div>
                             <div class="avatar bg-light-success p-50">
                                 <span class="avatar-content">
-                                    <i data-feather="globe" class="font-medium-4"></i>
+                                    <i data-feather="plus-circle" class="font-medium-4"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <a href="{{ route('real_estate.index') }}">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <h3 class="fw-bolder mb-75">{{$RealEstateTrashCount}}</h3>
+                                <span>Real Estate In Trash</span>
+                            </div>
+                            <div class="avatar bg-light-success p-50">
+                                <span class="avatar-content">
+                                    <i data-feather="trash" class="font-medium-4"></i>
                                 </span>
                             </div>
                         </div>
