@@ -43,7 +43,7 @@ class RealEstateApiController extends Controller
      */
     public function create()
     {
-        //
+        // It is not useful because we creating API
     }
 
     /**
@@ -146,7 +146,7 @@ class RealEstateApiController extends Controller
      */
     public function edit($id)
     {
-        //
+        // It is not useful because we creating API
     }
 
     /**
@@ -230,7 +230,7 @@ class RealEstateApiController extends Controller
         if($obj = RealEstate::where('id', $id)->first())
         {
             RealEstate::where('id', $id)->delete();
-            $objNew = RealEstate::where('id', $id)->first();
+            $objNew = RealEstate::where('id', $id)->withTrashed()->first();
             $response = APIResponse(true, 200, '', $this->responseTitle.' Deleted Successfully', ['removed_record' => $objNew]);
             return response($response, 200);
         }

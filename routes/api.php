@@ -22,7 +22,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // For RESTFul Api
 
-Route::resource('real_estate', RealEstateApiController::class);
+// Route::resource('real_estate', RealEstateApiController::class); This will be used with same url it is differentiate by method
+Route::post('real_estate/store', [RealEstateApiController::class,'store']);
+Route::post('real_estate/list', [RealEstateApiController::class, 'index']);
+Route::post('real_estate/show/{id}', [RealEstateApiController::class, 'show']);
+Route::post('real_estate/update/{id}', [RealEstateApiController::class, 'update']);
+Route::post('real_estate/remove/{id}', [RealEstateApiController::class, 'destroy']);
 
 // For Web Api
 
