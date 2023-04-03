@@ -26,7 +26,7 @@
         z-index: 5;
     }
     .card-body a {
-        color:rgb(214, 207, 207) !important;
+        color:rgb(102, 100, 100) !important;
         text-decoration: none;
     }
 
